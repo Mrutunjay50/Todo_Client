@@ -47,7 +47,7 @@ const AllNotes = () => {
       </div>
 
       <div className="flex flex-col justify-start gap-5 ml-[60px] pl-10 mt-20">
-        {allNotes?.map((item, index) => (
+        {Array.isArray(allNotes) && allNotes?.map((item, index) => (
           <NoteCard
             deleteNotes={deleteNotes}
             getRandomColor={getRandomColor}

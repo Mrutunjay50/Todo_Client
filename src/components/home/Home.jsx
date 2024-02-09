@@ -45,7 +45,7 @@ const Home = () => {
 
       <div className="flex flex-wrap justify-start gap-5 ml-[60px] pl-10 mt-20 relative">
       <span className='absolute  -top-10 text-[30px]'>YourNotes</span>
-      {allNotes?.map((item, index) => (<HomeCard key={index} item={item}/>))}
+      {Array.isArray(allNotes) && allNotes?.map((item, index) => (<HomeCard key={index} item={item}/>))}
     </div>
     </div>
   )

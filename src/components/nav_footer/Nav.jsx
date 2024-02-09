@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { MEMOPAD, Home, Logout, StickyNotes, User } from "../../assets/index";
 import { Link } from "react-router-dom";
 import { useAuth } from "../../context/LoginContext";
@@ -7,6 +7,9 @@ const Nav = () => {
   const [open, setOpen] = useState(false);
   const {handleLogout, userData} = useAuth();
 
+  useEffect(() => {
+    setOpen(false);
+  },[userData])
 
   return (
     <>{userData && <div className="bg-[#0000CD] h-[100vh] w-[60px] text-white flex flex-col items-center justify-between py-5 fixed">
