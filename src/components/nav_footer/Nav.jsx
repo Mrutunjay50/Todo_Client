@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { MEMOPAD, Home, Logout, StickyNotes, User } from "../../assets/index";
+import { MEMOPAD, Home, Logout, StickyNotes, User, Icon } from "../../assets/index";
 import { Link } from "react-router-dom";
 import { useAuth } from "../../context/LoginContext";
 
@@ -13,7 +13,7 @@ const Nav = () => {
 
   return (
     <>{userData && <div className="bg-[#0000CD] h-[100vh] w-[60px] text-white flex flex-col items-center justify-between py-5 fixed">
-    <img src={User} alt="Logo" className="cursor-pointer"/>
+    <img src={Icon} alt="Logo" className="cursor-pointer"/>
 
     <div className=" flex flex-col items-center justify-between h-[20vh]">
       <Link to="/" className="cursor-pointer">
