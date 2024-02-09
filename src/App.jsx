@@ -8,10 +8,10 @@ const App = () => {
   const isAuth = localStorage.getItem("isAuthenticated");
 
   const path = window.location.pathname;
-  if(path === '/' || path === '/allnotes'){
+  if(path === '/' && !isAuth || path === '/allnotes' && !isAuth){
     window.location.pathname = '/login';
   }
-  const ProtectedRoute = ({ element}) => {
+  const ProtectedRoute = ({ element, path}) => {
     if (!isAuth && !['/login', '/register'].includes(path)) {
       return <Navigate to="/login" />;
     }

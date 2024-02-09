@@ -41,7 +41,7 @@ export const AuthProvider = ({ children }) => {
         })
         .then((response) => {
           const {user} = response.data;
-          
+          localStorage.setItem("isAuthenticated", true);
           setUserData(user);
         })
         .catch(function (error) {
@@ -60,6 +60,8 @@ export const AuthProvider = ({ children }) => {
     }
 
   },[]);
+
+  
   const handleLogout = () => {
     document.cookie = "jwt=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
     localStorage.removeItem("isAuthenticated");

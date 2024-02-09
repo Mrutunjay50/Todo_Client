@@ -32,7 +32,7 @@ const Nav = () => {
     </div>
 
     <div className="h-[10vh] flex flex-col justify-between items-center">
-      <span className="cursor-pointer" onClick={handleLogout}>
+      <span className="cursor-pointer" onClick={() => handleLogout()}>
         <img src={Logout} alt="Logo" />
         {open && "Logout"}
       </span>
