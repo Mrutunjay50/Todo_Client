@@ -12,9 +12,9 @@ const App = () => {
     window.location.pathname = '/login';
   }
   const ProtectedRoute = ({ element, path}) => {
-    if (!isAuth && !['/login', '/register'].includes(path)) {
-      return <Navigate to="/login" />;
-    }
+    // if (!isAuth && !['/login', '/register'].includes(path)) {
+    //   return <Navigate to="/login" />;
+    // }
   
     return element;
   };
