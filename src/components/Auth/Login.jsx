@@ -51,6 +51,7 @@ const Login = () => {
             <label htmlFor="password">Password</label>
             <input className=' rounded-md px-2 py-1 mb-2' type="password" name="password" value={loginData.password} onChange={handleInput} onKeyDown={handleKeyDown}/>
         </div>
+        <p className='absolute top-4 right-32'>if not getting redirected reload once the free server is indeed slow so apologies for that</p>
         <Link className='absolute bottom-12 left-10' to="/register">Haven't Registered Yet!</Link>
         <span onClick={handleSubmit} className='absolute bottom-10 right-10 cursor-pointer border-2 rounded-md px-3 py-1 border-[#FF8FB1]'>Login</span>
     </div>

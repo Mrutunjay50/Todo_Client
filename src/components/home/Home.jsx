@@ -14,6 +14,8 @@ const HomeCard = ({item}) =>{
     let randomColorValue = getRandomColor();
     setRandomColor(randomColorValue);
   }, []);
+
+
   return (
       <Link to={`/seenote/${item._id}`} style={{ backgroundColor: randomColor }} className=' p-5 rounded-[3px] gap-3 w-[250px] text-white hover:text-white'>
           <p className='text-[26px]'>{item.mainTitle}</p>
@@ -42,6 +44,7 @@ const Home = () => {
 
       <p>a quick guide -- create note on create page it has a mainNote with subNite concept</p>
       <p>There might be nothing initially just start creating to see the magic</p>
+      <p>if notes are not getting updated then reload the page and after a few hits the server would work fine so bare with it for few time(maybe 3-4 times)</p>
 
       <div className="flex flex-wrap justify-start gap-5 ml-[60px] pl-10 mt-20 relative">
       <span className='absolute  -top-10 text-[30px]'>YourNotes</span>
