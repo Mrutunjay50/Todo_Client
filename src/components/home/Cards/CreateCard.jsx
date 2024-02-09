@@ -55,6 +55,7 @@ const CreateCard = ({
             style={{ backgroundColor: randomColor, opacity: 0.8 }}
             type="text"
             onChange={inputHandlerSub}
+            placeholder="set the title"
           />
           <textarea
             name="subContent"
@@ -63,6 +64,7 @@ const CreateCard = ({
             style={{ backgroundColor: randomColor, opacity: 0.8 }}
             type="text"
             onChange={inputHandlerSub}
+            placeholder="set the content"
           />
         </div>
       ) : (
@@ -86,6 +88,7 @@ const CreateCard = ({
             style={{ backgroundColor: randomColor, opacity: 0.8 }}
             type="text"
             onChange={inputHandler}
+            placeholder="set the title"
           />
           <textarea
             name="subContent"
@@ -94,6 +97,7 @@ const CreateCard = ({
             style={{ backgroundColor: randomColor, opacity: 0.8 }}
             type="text"
             onChange={inputHandler}
+            placeholder="set the content"
           />
         </div>
       )}
