@@ -24,7 +24,7 @@ const NoteCard = ({
   return (
     <div className="flex items-center gap-5">
       <span
-        className=" cursor-pointer text-black flex text-[26px] relative"
+        className=" cursor-pointer text-black flex text-[26px] relative shadow-md shadow-[#131313] rounded-full"
         onClick={() => {
           updateNoteStatus(
             item._id,
@@ -50,7 +50,7 @@ const NoteCard = ({
         )}
       </span>
       <div
-        className="flex flex-row items-center justify-between  p-2 rounded-[2px] shadow-md shadow-[#4a4949]"
+        className="flex flex-row items-center justify-between  p-2 rounded-[2px] shadow-md shadow-[#131313]"
         style={{ backgroundColor: randomColor }}
       >
         <img

@@ -3,6 +3,8 @@ import axios from "axios";
 import { API_URL } from "../utils";
 import { useAuth } from "./LoginContext";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+
 const NoteContext = createContext();
 
 export const NotesProvider = ({ children }) => {
@@ -20,8 +22,8 @@ export const NotesProvider = ({ children }) => {
           },
           params: {
             status,
-            sortBy
-        },
+            sortBy,
+          },
         });
         setAllNotes(response.data);
       } catch (error) {
@@ -31,7 +33,7 @@ export const NotesProvider = ({ children }) => {
   };
 
   const addNote = async (noteData) => {
-    if(tokenId){
+    if (tokenId) {
       try {
         const response = await axios.post(
           `${API_URL}/api/addnotes`,
@@ -43,12 +45,11 @@ export const NotesProvider = ({ children }) => {
             },
           }
         );
-
-        navigate('/allnotes');
+        toast.info("Note saved successfully!");
+        navigate("/allnotes");
         getNotes();
-  
-        console.log("Note saved successfully!");
       } catch (error) {
+        toast.error(error.message);
         console.error("Error saving note:", error.message);
       }
     }
@@ -66,9 +67,10 @@ export const NotesProvider = ({ children }) => {
           },
         }
       );
-
+      toast.info("Subnote saved successfully!");
       console.log("Subnote saved successfully!");
     } catch (error) {
+      toast.error("Error saving subnote ");
       console.error("Error saving subnote:", error.message);
     }
   };
@@ -87,15 +89,16 @@ export const NotesProvider = ({ children }) => {
       );
 
       console.log(response.data);
-
+      toast.info("subnote updated successfully!");
       console.log("subnote updated successfully!");
     } catch (error) {
+      toast.error("Error updating subnote");
       console.error("Error updating subnote:", error.message);
     }
   };
 
   const getOneMainNote = async (id, setNoteData) => {
-    if(tokenId){
+    if (tokenId) {
       try {
         if (id) {
           const response = await axios.get(
@@ -106,7 +109,7 @@ export const NotesProvider = ({ children }) => {
               },
             }
           );
-  
+
           setOneMainNote(response.data);
           if (setNoteData) {
             setNoteData((DATA) => ({
@@ -148,9 +151,10 @@ export const NotesProvider = ({ children }) => {
           },
         }
       );
-
+      toast.info("deleted main note");
       setAllNotes(response.data.note);
     } catch (error) {
+      toast.error("Error deleteing note");
       console.error("Error deleting note:", error.message);
     }
   };
@@ -165,8 +169,10 @@ export const NotesProvider = ({ children }) => {
           },
         }
       );
+      toast.info("deleted sub note");
       setOneMainNote(response.data.note);
     } catch (error) {
+      toast.error("Error deleting subnote");
       console.error("Error deleting subnote:", error.message);
     }
   };
@@ -184,15 +190,15 @@ export const NotesProvider = ({ children }) => {
       );
 
       setAllNotes(response.data.note);
-
+      toast.info("Note status updated successfully!");
       console.log("Note status updated successfully!");
     } catch (error) {
+      toast.error("Error updating note status:");
       console.error("Error updating note status:", error.message);
     }
   };
 
   const updateContentStatus = async (noteId, subNoteId, newStatus) => {
-  
     try {
       const response = await axios.put(
         `${API_URL}/api/updateContentStatus?id=${noteId}&subId=${subNoteId}`,
@@ -203,9 +209,10 @@ export const NotesProvider = ({ children }) => {
           },
         }
       );
-
+      toast.info("Content status updated successfully!");
       console.log("Content status updated successfully!");
     } catch (error) {
+      toast.error("Error updating content status:");
       console.error("Error updating content status:", error.message);
     }
   };
@@ -250,7 +257,7 @@ export const NotesProvider = ({ children }) => {
         deleteNotes,
         deleteSubNotes,
         updateNoteStatus,
-        updateContentStatus
+        updateContentStatus,
       }}
     >
       {children}

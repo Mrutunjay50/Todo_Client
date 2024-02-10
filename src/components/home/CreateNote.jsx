@@ -7,6 +7,9 @@ import { useParams } from "react-router-dom";
 import { useNotes } from "../../context/appContext";
 import CreateCard from "./Cards/CreateCard";
 import { useAuth } from "../../context/LoginContext";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const CreateNote = ({ edit, see, create }) => {
   const [noteData, setNoteData] = useState({
@@ -105,6 +108,7 @@ const CreateNote = ({ edit, see, create }) => {
 
   return (
     <div className=" absolute ml-[60px] pr-10 min-w-[96%]">
+    <ToastContainer/>
     <div className="absolute right-10 top-10 text-[26px]">{userData?.name}</div>
       <div className="flex text-[30px] px-10 my-5 justify-start items-center gap-2">
         <img src={EDIT} alt="+" />
@@ -137,7 +141,7 @@ const CreateNote = ({ edit, see, create }) => {
           </select>
         </div>
       )}
-      <div className=" bg-[#ffffff] flex justify-start items-center gap-2">
+      <div className=" bg-[#ffffff] ml-1 flex justify-start items-center gap-2 shadow-md shadow-[#131313]">
         <img className="ml-12" src={BoxList} alt="+" />
         <input
           type="text"
