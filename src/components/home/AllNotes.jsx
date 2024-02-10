@@ -20,7 +20,7 @@ const AllNotes = () => {
 
   return (
     <div className="flex flex-col items-center w-[100%]">
-      <div className=" flex flex-row items-center gap-5">
+      <div className=" flex flex-row items-center gap-5 mt-20">
         <p className="text-white text-[30px] ml-20">My Notes</p>
         <div className="flex flex-row gap-5">
           <select

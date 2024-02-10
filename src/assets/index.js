@@ -1,10 +1,8 @@
 import MEMOPAD from "./memo_pad.svg";
-import Login from "./login.svg";
 import Logout from "./logout.svg";
-import StickyNotes from "./sticky_note.svg";
+import StickyNotes from "./sticky.svg";
 import User from "./user.svg";
 import Home from './home.svg';
-import File from './file_on.svg';
 import FileOff from './delete.svg';
 import BoxList from './box_list.svg';
 import EDIT from './edit.svg'
@@ -14,7 +12,7 @@ import Cancel from './cancel.svg';
 import Add from './add.svg';
 import Pending from './pending.svg';
 import Complete from './complete.svg';
-import Icon  from './icon.svg';
+import Icon  from './icon1.svg';
 
 
-export {MEMOPAD, Login, Logout, StickyNotes, User, Home,BoxList,File,FileOff,EDIT, EDITW, Add, Check, Cancel, Pending, Complete, Icon}
+export {MEMOPAD, Logout, StickyNotes, User, Home,BoxList,FileOff,EDIT, EDITW, Add, Check, Cancel, Pending, Complete, Icon}

@@ -39,14 +39,14 @@ const CreateCard = ({
           style={{ backgroundColor: randomColor }}
         >
           <span
-            className="absolute bottom-3 right-3 cursor-pointer"
+            className="absolute bottom-3 right-3 cursor-pointer flex text-white gap-2 items-center shadow-[#878585]"
             onClick={() => {
               handleSubmitSub(subContent, id);
               setClicked(true);
               setSubContent({ subTitle: "", subContent: "" });
             }}
           >
-            <img src={Add} alt="" />
+            <span>{"create note"}</span><img src={Add} alt="" />
           </span>
           <input
             name="subTitle"
@@ -74,12 +74,12 @@ const CreateCard = ({
         >
           <Link
             to={`/allnotes`}
-            className="absolute bottom-3 right-3 cursor-pointer"
+            className="absolute bottom-3 right-3 cursor-pointer flex text-white gap-2 items-center shadow-[#878585]"
             onClick={() => {
               handleSubmit(noteData);
             }}
           >
-            <img src={Add} alt="" />
+            <span>{"create a note"}</span><img src={Add} alt="" />
           </Link>
           <input
             name="subTitle"

@@ -37,7 +37,7 @@ const NoteCard = ({
             {" "}
             <img
               src={Pending}
-              className="cursor-pointer bg-black rounded-full"
+              className="cursor-pointer bg-blue-400 rounded-full"
               alt=""
             />
           </>
@@ -45,7 +45,7 @@ const NoteCard = ({
         {item.status === "completed" && (
           <>
             {" "}
-            <img src={Complete} className="cursor-pointer" alt="" />
+            <img src={Complete} className="cursor-pointer bg-green-700 rounded-full" alt="" />
           </>
         )}
       </span>

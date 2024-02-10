@@ -13,7 +13,7 @@ const Nav = () => {
 
   return (
     <>{userData && <div className="bg-[#0000CD] h-[100vh] w-[60px] text-white flex flex-col items-center justify-between py-5 fixed">
-    <img src={Icon} alt="Logo" className="cursor-pointer"/>
+    <img src={Icon} alt="Logo" className=""/>
 
     <div className=" flex flex-col items-center justify-between h-[20vh]">
       <Link to="/" className="cursor-pointer">

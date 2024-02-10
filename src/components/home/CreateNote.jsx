@@ -18,7 +18,7 @@ const CreateNote = ({ edit, see, create }) => {
 
   const [filterStatus, setFilterStatus] = useState("all");
   const [sortOrder, setSortOrder] = useState("desc");
-  const { tokenId } = useAuth();
+  const { tokenId, userData } = useAuth();
   const [editTitle, setEditTitle] = useState(false);
   const [clicked, setClicked] = useState(false);
 
@@ -104,7 +104,8 @@ const CreateNote = ({ edit, see, create }) => {
   }, [clicked, tokenId, create]);
 
   return (
-    <div className=" absolute ml-[60px] pr-10 min-w-[90%]">
+    <div className=" absolute ml-[60px] pr-10 min-w-[96%]">
+    <div className="absolute right-10 top-10 text-[26px]">{userData?.name}</div>
       <div className="flex text-[30px] px-10 my-5 justify-start items-center gap-2">
         <img src={EDIT} alt="+" />
         <p>
@@ -167,7 +168,7 @@ const CreateNote = ({ edit, see, create }) => {
                 {oneMainNote?.status}{" "}
                 <img
                   src={Pending}
-                  className="cursor-pointer bg-black rounded-full"
+                  className="cursor-pointer bg-blue-300 w-[40px] h-[40px] rounded-full"
                   alt=""
                 />
               </>
@@ -175,7 +176,7 @@ const CreateNote = ({ edit, see, create }) => {
             {oneMainNote?.status === "completed" && (
               <>
                 {oneMainNote?.status}{" "}
-                <img src={Complete} className="cursor-pointer" alt="" />
+                <img src={Complete} className="cursor-pointer bg-green-400 rounded-full" alt="" />
               </>
             )}
             {")"}

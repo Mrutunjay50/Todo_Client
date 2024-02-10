@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useNotes } from "../../context/appContext";
 import { Link } from 'react-router-dom';
+import { MEMOPAD } from '../../assets';
 
 const HomeCard = ({item}) =>{
   const { getRandomColor, formatDate} = useNotes();
@@ -17,12 +18,13 @@ const HomeCard = ({item}) =>{
 
 
   return (
-      <Link to={`/seenote/${item._id}`} style={{ backgroundColor: randomColor }} className=' p-5 rounded-[3px] gap-3 w-[250px] text-white hover:text-white'>
+      <Link to={`/seenote/${item._id}`} style={{ backgroundColor: randomColor }} className=' p-5 rounded-[3px] gap-3 w-[250px] text-white hover:text-white relative'>
           <p className='text-[26px]'>{item.mainTitle}</p>
           <p className='text-[22px]'>{item.status}</p>
           <span className="drop-shadow-md ml-24">
               {`${day}/${month}/${year}`} {`${hours}:${minutes}`}
             </span>
+            <img src={MEMOPAD} alt="" className='absolute top-2 right-4'/>
       </Link>
   )
 }

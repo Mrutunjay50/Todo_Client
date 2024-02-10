@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { File, EDITW, FileOff, Check, Cancel, Pending, Complete } from "../../../assets/index";
+import { EDITW, FileOff, Check, Cancel, Pending, Complete } from "../../../assets/index";
 import { API_URL } from "../../../utils";
 import axios from "axios";
 import { useAuth } from "../../../context/LoginContext";
@@ -103,15 +103,15 @@ const EditCard = ({ randomColor, item, mainID, formatDate, setClicked, handleUpd
                 <img src={EDITW} alt="" />
               </span>
               <span
-                className="absolute bottom-3 left-3 cursor-pointer flex"
+                className="absolute bottom-3 left-3 cursor-pointer flex items-center gap-1"
                 onClick={() => {
                     setClicked(true);
                     updateContentStatus(mainID, item._id, item.status === "pending" ? "completed" : "pending")}
                 }
                 
               >
-                {item.status === "pending" && <>{item.status} <img src={Pending} className="cursor-pointer" alt="" /></>}
-                {item.status === "completed" && <>{item.status} <img src={Complete} className="cursor-pointer" alt="" /></>}
+                {item.status === "pending" && <><span>{item.status}</span> <img src={Pending} className="cursor-pointer" alt="" /></>}
+                {item.status === "completed" && <><span>{item.status}</span> <img src={Complete} className="cursor-pointer bg-green-600 rounded-full" alt="" /></>}
               </span>
               <span
                 className="absolute bottom-3 right-16 cursor-pointer"
