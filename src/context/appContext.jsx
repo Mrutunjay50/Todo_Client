@@ -2,13 +2,14 @@ import React, { useState, useEffect, createContext, useContext } from "react";
 import axios from "axios";
 import { API_URL } from "../utils";
 import { useAuth } from "./LoginContext";
-
+import { useNavigate } from "react-router-dom";
 const NoteContext = createContext();
 
 export const NotesProvider = ({ children }) => {
   const [allNotes, setAllNotes] = useState([]);
   const [oneMainNote, setOneMainNote] = useState([]);
   const { tokenId } = useAuth();
+  const navigate = useNavigate();
 
   const getNotes = async (status, sortBy) => {
     if (tokenId) {
@@ -42,8 +43,9 @@ export const NotesProvider = ({ children }) => {
             },
           }
         );
-  
-        console.log(response.data);
+
+        navigate('/allnotes');
+        getNotes();
   
         console.log("Note saved successfully!");
       } catch (error) {
@@ -64,8 +66,6 @@ export const NotesProvider = ({ children }) => {
           },
         }
       );
-
-      console.log(response.data);
 
       console.log("Subnote saved successfully!");
     } catch (error) {

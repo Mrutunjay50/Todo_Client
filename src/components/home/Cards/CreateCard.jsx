@@ -72,15 +72,14 @@ const CreateCard = ({
           className={`relative w-[260px] h-[45vh] rounded-md flex flex-col p-5 text-white shadow-md shadow-[#131313]`}
           style={{ backgroundColor: randomColor }}
         >
-          <Link
-            to={`/allnotes`}
+          <span
             className="absolute bottom-3 right-3 cursor-pointer flex text-white gap-2 items-center shadow-[#878585]"
             onClick={() => {
               handleSubmit(noteData);
             }}
           >
             <span>{"create a note"}</span><img src={Add} alt="" />
-          </Link>
+          </span>
           <input
             name="subTitle"
             value={noteData.subTitle}

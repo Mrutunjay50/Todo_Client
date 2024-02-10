@@ -45,7 +45,7 @@ const Home = () => {
   }, []);
   return (
     <div className='ml-[60px] pl-10'>
-      <p className='text-[30px] '>Welcome to This ToDo App</p>
+      <p className='text-[30px] ' onMouseEnter={() => setInstruction(true)} onMouseLeave={() => setInstruction(false)}>Welcome to This ToDo App</p>
       {instruction && <><span className='absolute right-0 text-center w-[500px]'>Instruction : </span>
       <span className='absolute right-0 top-[10%] text-center w-[500px] shadow-md shadow-[#131313] rounded-md p-5'>
       <p>Make sure to explore this notes app to the fullest to get to know its features</p>
