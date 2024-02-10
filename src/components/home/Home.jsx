@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import { MEMOPAD } from "../../assets";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import FeatureCard from "./Cards/FeatureCard";
+import { useAuth } from "../../context/LoginContext";
 
 const HomeCard = ({ item }) => {
   const { getRandomColor, formatDate } = useNotes();
@@ -37,6 +39,7 @@ const HomeCard = ({ item }) => {
 const Home = () => {
   const { getNotes, allNotes } = useNotes();
   const [instruction, setInstruction] = useState(true);
+  const {userData} = useAuth();
 
   useEffect(() => {
     getNotes(null, "viewall");
@@ -47,18 +50,19 @@ const Home = () => {
     return () => clearTimeout(timeoutId);
   }, []);
   return (
-    <div className="ml-[60px] pl-10">
+    <div className="ml-[60px] pl-10 pt-20">
       <ToastContainer/>
       <p
-        className="text-[30px] "
+        className="text-[30px] flex flex-row justify-between mx-10"
         onMouseEnter={() => setInstruction(true)}
         onMouseLeave={() => setInstruction(false)}
       >
-        Welcome to This ToDo App
+        <span>Welcome to This ToDo App</span> <span>{userData?.name}</span>
       </p>
+      <FeatureCard/>
       {instruction && (
         <>
-          <span className="absolute right-0 text-center w-[500px]">
+          <span className="absolute right-0 top-[5%] text-center w-[500px]">
             Instruction :{" "}
           </span>
           <span className="absolute right-0 top-[10%] text-center w-[500px] shadow-md bg-[#363535] shadow-[#131313] rounded-md p-5 z-50">
