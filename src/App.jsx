@@ -22,7 +22,7 @@ const App = () => {
   return (
     <>
       <Nav />
-      <div className="flex flex-row w-full min-h-[100vh]">
+      <div className="flex flex-row w-full min-h-[100vh] font-poppins">
         <Routes>
           <Route path="/" element={<ProtectedRoute element={<Home />} path="/" />} />
           <Route path="/seenote/:id" element={<ProtectedRoute element={<CreateNote see={true} create={false} edit={false} />} path="/seenote/:id" />} />

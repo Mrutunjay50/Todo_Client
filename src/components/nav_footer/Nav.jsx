@@ -12,7 +12,7 @@ const Nav = () => {
   },[userData])
 
   return (
-    <>{userData && <div className="bg-[#0000CD] h-[100vh] w-[60px] text-white flex flex-col items-center justify-between py-5 fixed">
+    <>{userData && <div className="bg-[#0000CD] h-[100vh] w-[60px] text-white flex flex-col items-center justify-between py-5 fixed shadow-md shadow-[#131313]">
     <img src={Icon} alt="Logo" className=""/>
 
     <div className=" flex flex-col items-center justify-between h-[20vh]">

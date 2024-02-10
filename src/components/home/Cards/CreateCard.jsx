@@ -35,7 +35,7 @@ const CreateCard = ({
     <>
       {edit ? (
         <div
-          className={`relative w-[260px] h-[45vh] rounded-md flex flex-col p-5 text-white shadow-md shadow-[#878585]`}
+          className={`relative w-[260px] h-[45vh] rounded-md flex flex-col p-5 text-white shadow-md shadow-[#131313]`}
           style={{ backgroundColor: randomColor }}
         >
           <span
@@ -69,7 +69,7 @@ const CreateCard = ({
         </div>
       ) : (
         <div
-          className={`relative w-[260px] h-[45vh] rounded-md flex flex-col p-5 text-white shadow-md shadow-[#878585]`}
+          className={`relative w-[260px] h-[45vh] rounded-md flex flex-col p-5 text-white shadow-md shadow-[#131313]`}
           style={{ backgroundColor: randomColor }}
         >
           <Link
