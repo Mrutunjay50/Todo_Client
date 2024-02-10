@@ -21,7 +21,7 @@ const App = () => {
 
   return (
     <>
-      {isAuth && <Nav />}
+      <Nav />
       <div className="flex flex-row w-full min-h-[100vh]">
         <Routes>
           <Route path="/" element={<ProtectedRoute element={<Home />} path="/" />} />
