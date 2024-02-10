@@ -3,11 +3,11 @@ import { Add, EDIT, MEMOPAD } from '../../../assets'
 
 const FeatureCard = () => {
   return (
-    <div className='flex justify-center items-center gap-5 pt-10 -ml-12'>
-    <div className='w-[300px] relative h-[500px] bg-[#4b4a4a] shadow-md shadow-[#131313] rounded-md flex flex-col pl-3 pt-3'>
-        <p className='text-[28px] mb-10 drop-shadow-md'>#feature 1</p>
+    <div className='flex flex-col md:flex-row justify-center items-center gap-5 pt-10 md:-ml-12 '>
+    <div className=' w-[280px] md:w-[300px] relative h-[380px] md:h-[500px] bg-[#4b4a4a] shadow-md shadow-[#131313] rounded-md flex flex-col pl-3 pt-3'>
+        <p className='md:text-[28px] mb-10 drop-shadow-md'>#feature 1</p>
         <img src={MEMOPAD} className='absolute right-4'/>
-        <p className='text-[20px] p-2 drop-shadow-md'>
+        <p className='md:text-[20px] p-2 drop-shadow-md'>
             # See all notes and filter by pending, completed, or view all.
             <br />
             # Sort notes in ascending or descending order based on title.
@@ -19,10 +19,10 @@ const FeatureCard = () => {
         </div>
     </div>
 
-    <div className='w-[300px] relative h-[500px] bg-[#4b4a4a] shadow-md shadow-[#131313] rounded-md flex flex-col items-center pt-3'>
-        <p className='text-[28px] mb-10 drop-shadow-md'>#feature 2</p>
+    <div className='w-[280px] md:w-[300px] relative h-[380px] md:h-[500px] bg-[#4b4a4a] shadow-md shadow-[#131313] rounded-md flex flex-col items-center pt-3'>
+        <p className='md:text-[28px] mb-10 drop-shadow-md'>#feature 2</p>
         <img src={EDIT} className='absolute right-4'/>
-        <p className='text-[20px] p-2 drop-shadow-md'>
+        <p className='md:text-[20px] p-2 drop-shadow-md'>
             # Create, read, update, and delete main notes.
             <br />
             # Create, read, update, and delete subnotes.
@@ -36,10 +36,10 @@ const FeatureCard = () => {
         </div>
     </div>
 
-    <div className='w-[300px] relative h-[500px] bg-[#4b4a4a] shadow-md shadow-[#131313] rounded-md flex flex-col items-center pt-3'>
-        <p className='text-[28px] mb-10 drop-shadow-md'>#feature 3</p>
+    <div className='w-[280px] md:w-[300px] relative h-[380px] md:h-[500px] bg-[#4b4a4a] shadow-md shadow-[#131313] rounded-md flex flex-col items-center pt-3'>
+        <p className='md:text-[28px] mb-10 drop-shadow-md'>#feature 3</p>
         <img src={Add} className='absolute right-4'/>
-        <p className='text-[20px] p-2 drop-shadow-md'>
+        <p className='md:text-[20px] p-2 drop-shadow-md'>
             # Update the status of main notes and subnotes.
             <br />
             # If all subnotes in a main note are complete, the main note updates to complete.

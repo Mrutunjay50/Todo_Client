@@ -43,7 +43,7 @@ const Login = () => {
     }
   };
   return (
-    <div className=" bg-[#4b4a4a] shadow-md shadow-[#131313] w-[30%] h-[80vh] rounded-md absolute left-[35%] top-20 p-10 flex flex-col justify-evenly">
+    <div className=" bg-[#4b4a4a] shadow-md shadow-[#131313] w-[95%] md:w-[30%] h-[70vh] md:h-[80vh] rounded-md absolute ml-3 md:left-[35%] top-20 p-10 flex flex-col justify-evenly">
       <ToastContainer
         position="top-right"
         autoClose={5000}

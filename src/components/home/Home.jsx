@@ -50,22 +50,22 @@ const Home = () => {
     return () => clearTimeout(timeoutId);
   }, []);
   return (
-    <div className="ml-[60px] pl-10 pt-20">
+    <div className="ml-[60px] md:pl-10 pt-10">
       <ToastContainer/>
       <p
-        className="text-[30px] flex flex-row justify-between mx-10"
+        className=" text-[20px] md:text-[30px] flex flex-row justify-between mx-10 z-50"
         onMouseEnter={() => setInstruction(true)}
         onMouseLeave={() => setInstruction(false)}
       >
-        <span>Welcome to This ToDo App</span> <span>{userData?.name}</span>
+        <span>Welcome to This ToDo App</span> <span className="fixed bottom-2 md:bottom-4 right-4">{userData?.name}</span>
       </p>
       <FeatureCard/>
       {instruction && (
         <>
-          <span className="absolute right-0 top-[5%] text-center w-[500px]">
+          <span className="absolute md:right-0 top-[5%] bg-[#363535] shadow-[#131313] p-2 md:shadow-none rounded-md text-center md:w-[500px]">
             Instruction :{" "}
           </span>
-          <span className="absolute right-0 top-[10%] text-center w-[500px] shadow-md bg-[#363535] shadow-[#131313] rounded-md p-5 z-50">
+          <span className="absolute right-0 top-[10%] text-center md:w-[500px] shadow-md bg-[#363535] shadow-[#131313] rounded-md p-5 z-50">
             <p>
               Make sure to explore this notes app to the fullest to get to know
               its features
@@ -91,7 +91,7 @@ const Home = () => {
           </span>
         </>
       )}
-      <div className="flex flex-wrap justify-start gap-5 ml-[60px] mt-20 relative">
+      <div className="flex flex-wrap justify-center md:justify-start gap-5 md:ml-[60px] mt-20 relative mb-10">
         <span className="absolute  -top-10 text-[30px]">YourNotes</span>
         {Array.isArray(allNotes) &&
           allNotes?.map((item, index) => <HomeCard key={index} item={item} />)}

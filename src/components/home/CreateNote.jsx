@@ -106,10 +106,11 @@ const CreateNote = ({ edit, see, create }) => {
     setClicked(false);
   }, [clicked, tokenId, create]);
 
-  return (
-    <div className=" absolute ml-[60px] pr-10 min-w-[96%]">
+  return (<>
+    <div className="absolute right-0 bottom-0 flex md:hidden text-[26px]">{userData?.name}</div>
+    <div className=" absolute ml-[60px] md:pr-10 w-[80%] md:w-[96%]">
     <ToastContainer/>
-    <div className="absolute right-10 top-10 text-[26px]">{userData?.name}</div>
+    <div className="absolute right-10 hidden md:flex md:top-10 text-[26px]">{userData?.name}</div>
       <div className="flex text-[30px] px-10 my-5 justify-start items-center gap-2">
         <img src={EDIT} alt="+" />
         <p>
@@ -121,9 +122,9 @@ const CreateNote = ({ edit, see, create }) => {
         </p>
       </div>
       {!create && (
-        <div className="  flex justify-start items-center gap-2">
+        <div className="flex justify-start items-center gap-2">
           <select
-            className="ml-4 text-[26px] bg-transparent focus:outline-none"
+            className="md:ml-4 text-[26px] bg-transparent focus:outline-none"
             value={filterStatus}
             onChange={(e) => setFilterStatus(e.target.value)}
           >
@@ -141,8 +142,8 @@ const CreateNote = ({ edit, see, create }) => {
           </select>
         </div>
       )}
-      <div className=" bg-[#ffffff] ml-1 flex justify-start items-center gap-2 shadow-md shadow-[#131313]">
-        <img className="ml-12" src={BoxList} alt="+" />
+      <div className=" bg-[#ffffff] md:ml-1 flex justify-start items-center gap-2 shadow-md shadow-[#131313]">
+        <img className="md:ml-12" src={BoxList} alt="+" />
         <input
           type="text"
           name="mainTitle"
@@ -150,14 +151,14 @@ const CreateNote = ({ edit, see, create }) => {
           value={noteData.mainTitle}
           className={`${
             editTitle ? "bg-[#e2dede]" : "bg-transparent"
-          } text-[26px] focus:outline-none w-[80%] text-black`}
+          } text-[26px] focus:outline-none w-[50%] md:w-[80%] text-black`}
           onFocus={handleFocus}
           onBlur={() => handleBlur(id)}
           onChange={inputHandler}
         />
         {!create && (
           <span
-            className=" cursor-pointer text-black flex text-[26px] relative"
+            className=" cursor-pointer text-black items-center flex text-[20px] md:text-[26px] relative"
             onClick={() => {
               setClicked(true);
               updateNoteStatus(
@@ -172,7 +173,7 @@ const CreateNote = ({ edit, see, create }) => {
                 {oneMainNote?.status}{" "}
                 <img
                   src={Pending}
-                  className="cursor-pointer bg-blue-300 w-[40px] h-[40px] rounded-full"
+                  className="cursor-pointer bg-blue-300 w-[20px] h-[20px] md:w-[40px] md:h-[40px] rounded-full"
                   alt=""
                 />
               </>
@@ -187,7 +188,7 @@ const CreateNote = ({ edit, see, create }) => {
           </span>
         )}
       </div>
-      <div className=" px-10 py-5 flex flex-wrap gap-3">
+      <div className=" px-10 py-5 flex flex-wrap justify-center gap-3">
         {create ? (
           <CreateContent
             edit={edit}
@@ -234,7 +235,7 @@ const CreateNote = ({ edit, see, create }) => {
         )}
       </div>
     </div>
-  );
+    </>);
 };
 
 export default CreateNote;

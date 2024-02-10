@@ -61,7 +61,7 @@ const NoteCard = ({
         />
         <Link
           to={`/seenote/${item._id}`}
-          className="flex flex-row items-center justify-between  relative cursor-pointer  w-[400px] text-white hover:text-white "
+          className="flex flex-row items-center justify-between  relative cursor-pointer min-w-[200px] md:w-[400px] text-white hover:text-white "
         >
           <div className=" flex flex-col">
             <span className="drop-shadow-md">{item.mainTitle}</span>{" "}
