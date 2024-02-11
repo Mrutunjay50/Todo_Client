@@ -45,7 +45,7 @@ const Home = () => {
     getNotes(null, "viewall");
     const timeoutId = setTimeout(() => {
       setInstruction(false);
-    }, 5000);
+    }, 3000);
 
     return () => clearTimeout(timeoutId);
   }, []);
@@ -53,7 +53,7 @@ const Home = () => {
     <div className="ml-[60px] md:pl-10 pt-10">
       <ToastContainer/>
       <p
-        className=" text-[20px] md:text-[30px] flex flex-row justify-between mx-10 z-50"
+        className=" text-[20px] md:text-[30px] flex flex-row justify-between items-center mx-10 z-50"
         onMouseEnter={() => setInstruction(true)}
         onMouseLeave={() => setInstruction(false)}
       >
@@ -62,7 +62,7 @@ const Home = () => {
       <FeatureCard/>
       {instruction && (
         <>
-          <span className="absolute md:right-0 top-[5%] bg-[#363535] shadow-[#131313] p-2 md:shadow-none rounded-md text-center md:w-[500px]">
+          <span className="absolute md:right-0 top-[5%] bg-[#363535] shadow-[#131313] p-2 md:shadow-none rounded-md text-center w-[200px] md:w-[500px]">
             Instruction :{" "}
           </span>
           <span className="absolute right-0 top-[10%] text-center md:w-[500px] shadow-md bg-[#363535] shadow-[#131313] rounded-md p-5 z-50">
